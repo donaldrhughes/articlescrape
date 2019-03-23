@@ -55,6 +55,30 @@ module.exports = function (app) {
 
                     articles.push(articleObj);
 
+                  
+                        // db.find({
+                            //$set??
+                        // })
+                
+                
+                        //     .then(function (dbArticle) {
+                          
+                        //         var articleData = {
+                        //             articles: dbArticle
+                        //         }
+                              
+                                // if(articleData.ar){
+
+                                // }
+
+
+                            // })
+                            // .catch(function (err) {
+                
+                            //     res.json(err);
+                            // })
+
+
                     db.create(articleObj)
                         .then(function (dbArticle) {
                             console.log(article)
