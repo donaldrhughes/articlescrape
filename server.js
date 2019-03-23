@@ -33,8 +33,10 @@ app.set("view engine", "handlebars");
 app.use(express.static("public"));
 
 //Database config
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines2";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://heroku_283p80ck2:heroku_283p80ck2@ds115411.mlab.com:15411/heroku_283p80ck";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+heroku_283p80ck2
 
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
