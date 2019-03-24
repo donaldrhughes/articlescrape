@@ -6,10 +6,11 @@ var Schema = mongoose.Schema;
 //new UserSchema obj
 
 var ArticleSchema = new Schema({
- //requirements
+   //unique: true --disallows duplicates
   aText: {
     type: String,
     required: true,
+ 
     unique : true
   },
 
@@ -25,7 +26,8 @@ var ArticleSchema = new Schema({
   },
   note: {
     type: Schema.Types.ObjectId,
-    ref: "Note"
+    ref: "Note",
+    unique: true
   }
 });
 
