@@ -1,4 +1,5 @@
 var db = require("../models/Article");
+var Note = require("../models/Note");
 var dbArticles = [];
 
 module.exports = function (app) {

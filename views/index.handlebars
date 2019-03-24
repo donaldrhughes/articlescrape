@@ -8,6 +8,7 @@
         <h2><b>Articles</b></h2>
       </div>
     </div>
+
     <ul id="articlesUl" class="list-group mt-1">
 
       {{#each articles}}
@@ -16,7 +17,7 @@
           <li><b>Headline:</b> {{this.aText}}</li>
           <li><b>Summary:</b> {{this.aSummary}}</li>
           <li><b></b> <a href="{{this.aUrl}}">Link to Story</a></li>
-          <li>Notes: {{this.note}}</li>
+          <li>Notes: <div id="#notes">{{this.note}}</div></li>
           <li><b>ID: </b> {{this.id}}</li>
         </div>
       </div>
@@ -47,7 +48,7 @@
               <div class="col-4"></div>
               <div class="col">
 
-                <textarea class="form-control " id="note-description" aria-describedby="note-description"
+                <textarea class="form-control " id="addNote" aria-describedby="addNote"
                   placeholder="Add a New Note"></textarea>
               </div>
               <div class="col-4"></div>
@@ -56,7 +57,7 @@
                 <div class="col "></div>
                 <div class="col offset-1">
 
-                  <button id="submitBtn" class="btn btn-primary">Submit</button>
+                  <button id="submitBtn" data-id="{{this.id}}" class="btn btn-primary">Submit</button>
                   <button id="removeBtn" class="btn btn-danger">Remove</button>
                 </div>
 

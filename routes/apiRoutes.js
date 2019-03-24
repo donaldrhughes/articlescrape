@@ -8,10 +8,10 @@ module.exports = function (app) {
     app.get("/articles", function (req, res) {
 
         db.find({})
-              .then(function (dbArticle) {
+            .then(function (dbArticle) {
 
                 res.json(dbArticle);
-              })
+            })
             .catch(function (err) {
 
                 res.json(err);
@@ -77,6 +77,13 @@ module.exports = function (app) {
         });
 
     })
+
+
+    app.post("/notes/:id", function (req, res) {
+        console.log(req.params.id)
+
+    })
+
 
 }
 
