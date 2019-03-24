@@ -24,11 +24,17 @@ var ArticleSchema = new Schema({
     required: true,
     unique : true
   },
+  date: {
+    type: Date,
+    default: Date.now
+  },
   note: {
     type: Schema.Types.ObjectId,
     ref: "Note",
-    unique: true
+    notes: ""
+    
   }
+  
 });
 
 

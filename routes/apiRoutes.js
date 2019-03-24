@@ -41,8 +41,8 @@ module.exports = function (app) {
                         id: "",
                         aText: "",
                         aSummary: "",
-                        aUrl: "",
-                        note: ""
+                        aUrl: ""
+                        
                     };
                     var headline = $(element).find("h2").text()
 
@@ -61,7 +61,7 @@ module.exports = function (app) {
 
                     db.create(articleObj)
                         .then(function (dbArticle) {
-                            console.log(article)
+                        
                             console.log("Article Created")
                         })
                         .catch(function (err) {
@@ -80,9 +80,25 @@ module.exports = function (app) {
 
 
     app.post("/notes/:id", function (req, res) {
-        console.log(req.params.id)
+        console.log(req.params.id);
+        console.log(req.body.note);
+        Note.update({ _id: req.params.id }, { note: req.body.note }, function ( res, err, raw) {
+            if (err) return console.log(err);
+            console.log('The raw response from Mongo was ', raw);
+            console.log(res);
+        })
+        .then(function(results){
+            console.log(results);
+        })
 
-    })
+
+
+    // db.findById(req.params.id, function(result){
+    //     console.log(result)
+    // })
+    // if(req.params.id === )
+    // db.update
+})
 
 
 }

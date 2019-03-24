@@ -1,11 +1,13 @@
-$("#submitBtn").on("click", function () {
+$(".submitBtn").on("click", function () {
     var id = $(this).attr("data-id");
-
+    var note = $("#" + id).val();
+   
+    console.log(note);
     $.ajax({
         method: "POST",
         url: "/notes/" + id,
         data: {
-            note: "id.note"
+            note: note
         }
 
     })
