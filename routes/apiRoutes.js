@@ -1,4 +1,5 @@
 var db = require("../models/Article");
+var Note = require("../models/Note");
 var cheerio = require("cheerio");
 var axios = require("axios");
 
@@ -40,7 +41,8 @@ module.exports = function (app) {
                         id: "",
                         aText: "",
                         aSummary: "",
-                        aUrl: ""
+                        aUrl: "",
+                        note: ""
                     };
                     var headline = $(element).find("h2").text()
 
@@ -55,28 +57,6 @@ module.exports = function (app) {
 
                     articles.push(articleObj);
 
-                  
-                        // db.find({
-                            //$set??
-                        // })
-                
-                
-                        //     .then(function (dbArticle) {
-                          
-                        //         var articleData = {
-                        //             articles: dbArticle
-                        //         }
-                              
-                                // if(articleData.ar){
-
-                                // }
-
-
-                            // })
-                            // .catch(function (err) {
-                
-                            //     res.json(err);
-                            // })
 
 
                     db.create(articleObj)
